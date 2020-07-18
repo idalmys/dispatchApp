@@ -12,7 +12,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 
 //Routes
-
+app.use("/driver",require("./routes/driveRoutes"))
+app.use("/company",require("./routes/companyRoutes"))
+app.use("/tools",require("./routes/toolsRouter"))
 
 //Database
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost/dispatchDB";
